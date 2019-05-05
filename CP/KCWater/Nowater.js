@@ -3,7 +3,7 @@ var app = angular.module("app",[]);
 app.controller('MainCtrl',function ($scope,$http) {
 
     $http.get("\n" +
-        "https://data.kcmo.org/resource/cyqf-nban.json?department=Water%20Services&creation_year=2017&$select=count(case_id),creation_month&$order=count(case_id)%20DESC&$group=creation_month&$LIMIT=12").then(function (value) {
+        "https://data.kcmo.org/resource/cyqf-nban.json?department=Water%20Services&creation_year=2018&request_type=Water-No%20Water%20/%20Pressure-No%20Water&$select=creation_month,count(case_id)&$order=count(case_id)%20DESC&$group=creation_month&$LIMIT=12").then(function (value) {
 
         $scope.kcvalue = value.data;
         console.log($scope.kcvalue);
